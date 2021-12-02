@@ -3,6 +3,8 @@ logging:
     org.sprinframework: DEBUG
 
 spring:
+  jpa:
+    defer-datasource-initialization: true
   datasource:
     url: jdbc:h2:mem:bugtracker
   h2:

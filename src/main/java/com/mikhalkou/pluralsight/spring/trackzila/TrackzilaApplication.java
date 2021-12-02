@@ -17,15 +17,4 @@ public class TrackzilaApplication {
         SpringApplication.run(TrackzilaApplication.class, args);
     }
 
-    @Bean
-    public CommandLineRunner demoJpa(ApplicationRepository repo) {
-        return (args) -> {
-            repo.save(new Application("Trackzilla", "Bug tracking application", "Incognito"));
-            repo.save(new Application("TheApp", "An application", "Me"));
-
-            for (Application app : repo.findAll()) {
-                logger.info("Application: {}", app);
-            }
-        };
-    }
 }
