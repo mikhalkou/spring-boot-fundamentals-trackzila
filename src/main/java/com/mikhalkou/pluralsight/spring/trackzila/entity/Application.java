@@ -11,11 +11,11 @@ import javax.persistence.*;
 @NoArgsConstructor
 public class Application {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "application_id")
     private Long id;
 
-    @Column(name = "app_name", nullable = false)
+    @Column(name = "app_name", nullable = false, unique = true)
     private String name;
 
     @Column(length = 2000)
